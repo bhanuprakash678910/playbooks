@@ -1,0 +1,12 @@
+- name: Tags on tasks
+  hosts: all
+  tasks:
+    - debug: msg="Installing Web Service"
+      tags:
+        - DB
+        - production
+        - dev
+        - quality
+    - debug: msg="Installing DB Service"
+      tags: 
+       - [DB,dev]
