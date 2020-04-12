@@ -1,0 +1,16 @@
+---
+ - name: TITLE
+   hosts: ubuntu
+   tasks:
+   - name: installing apache2
+     apt:
+        name: apache2
+        state: present
+   - name:
+     copy:
+         src: /home/ansible/index.html
+         dest: /var/www/html
+   - name:
+     service:
+           name: apache2
+           state: restarted
